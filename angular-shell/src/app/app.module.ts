@@ -21,12 +21,12 @@ export function initializeApp(): () => void {
   return () => {
     loadRemoteModule({
       remoteEntry: "http://localhost:3001/remoteEntry.js",
-      remoteName: "profile_user",
+      remoteName: "react_components",
       exposedModule: "./PopularTagsComponent",
     });
     loadRemoteModule({
       remoteEntry: "http://localhost:3002/remoteEntry.js",
-      remoteName: "settings_user",
+      remoteName: "vue_components",
       exposedModule: "./Feed",
     });
   };

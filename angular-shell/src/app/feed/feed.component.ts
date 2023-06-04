@@ -22,7 +22,7 @@ containerVueRef!: ElementRef;
 
   ngAfterViewInit() {
     try {
-      import("settings_user/Feed").then((val) => {
+      import("vue_components/Feed").then((val) => {
         this.renderer.appendChild(
           this.containerVueRef.nativeElement,
           new val.default()

@@ -5,7 +5,7 @@ const { VueLoaderPlugin } = require('vue-loader');
 const { ModuleFederationPlugin } = require('webpack').container;
 const deps = require("./package.json").dependencies;
 
-module.exports = (env = {}) => ({
+module.exports = () => ({
  mode: 'development',
   cache: false,
   devtool: 'source-map',
@@ -62,7 +62,7 @@ module.exports = (env = {}) => ({
       filename: '[name].css',
     }),
     new ModuleFederationPlugin({
-      name: 'settings_user',
+      name: 'vue_components',
       filename: 'remoteEntry.js',
       exposes: {
         './Feed': './src/components/Feed'

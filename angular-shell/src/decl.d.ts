@@ -1,2 +1,2 @@
-declare module "profile_user/*";
-declare module "settings_user/*";
+declare module "react_components/*";
+declare module "vue_components/*";

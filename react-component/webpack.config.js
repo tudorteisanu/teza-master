@@ -44,10 +44,9 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'profile_user',
+      name: 'react_components',
       filename: 'remoteEntry.js',
       exposes: {
-        './ProfileReactComponent': './src/ProfileReactComponent',
         './PopularTagsComponent': './src/PopularTagsComponent',
       },
       shared: {

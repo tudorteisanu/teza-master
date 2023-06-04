@@ -22,8 +22,8 @@ module.exports = {
       name: "angular-shell",
       filename: "remoteEntry.js",
       remotes: {
-        profile_user: `profile_user@http://localhost:3001/remoteEntry.js`,
-        settings_user: `settings_user@http://localhost:3002/remoteEntry.js`,
+        react_components: `react_components@http://localhost:3001/remoteEntry.js`,
+        vue_components: `vue_components@http://localhost:3002/remoteEntry.js`,
       },
       shared: {
         react: {

@@ -21,7 +21,7 @@ export class PopularTagsComponent implements AfterViewInit, OnDestroy {
     this.root = createRoot(this.containerRef.nativeElement);
     this.root.render("Loading script...");
     try {
-      import("profile_user/PopularTagsComponent").then((val) => {
+      import("react_components/PopularTagsComponent").then((val) => {
         this.root.render(
           React.createElement(val.PopularTagsComponent)
         );
