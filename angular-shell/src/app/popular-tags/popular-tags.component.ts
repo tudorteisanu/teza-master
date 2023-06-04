@@ -1,7 +1,5 @@
-import {AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnDestroy, ViewChild} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {ProfileUserService} from "../profile-user/profile-user.service";
-import {IUser} from "../models/user";
 import {createRoot} from "react-dom/client";
 import * as React from "react";
 

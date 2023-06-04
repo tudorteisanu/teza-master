@@ -1,14 +1,13 @@
 import { Component } from "@angular/core";
-import { ProfileUserComponent } from "../profile-user/profile-user.component";
-import { SettingsComponent } from "../settings/settings.component";
 import {PopularTagsComponent} from "../popular-tags/popular-tags.component";
+import {FeedComponent} from "../feed/feed.component";
+import {NavbarComponent} from "../navbar/navbar.component";
 
 @Component({
   standalone: true,
-  imports: [SettingsComponent, ProfileUserComponent, PopularTagsComponent],
+  imports: [PopularTagsComponent, FeedComponent, NavbarComponent],
   selector: "app-layout",
-  template: `<app-profile-user></app-profile-user>
-  <app-popular-tags></app-popular-tags>
-    <app-settings></app-settings>`,
+  templateUrl: './layout.component.html',
+  styleUrls: ['./layout.component.css']
 })
 export class LayoutComponent {}

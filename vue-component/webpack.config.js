@@ -65,7 +65,7 @@ module.exports = (env = {}) => ({
       name: 'settings_user',
       filename: 'remoteEntry.js',
       exposes: {
-        './Settings': './src/components/Settings'
+        './Feed': './src/components/Feed'
       },
       shared: {
         vue: {
