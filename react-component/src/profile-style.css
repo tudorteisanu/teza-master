@@ -8,7 +8,6 @@ button {
     cursor: pointer;
     font-size: 0.9375rem;
     line-height: 1.75;
-    min-width: 64px;
     padding: 10px 21px;
     border: 1px solid rgba(55, 125, 255, 0.5);
     color: rgb(55, 125, 255);
@@ -16,6 +15,7 @@ button {
     border-radius: 5px;
     position: relative;
     overflow: hidden;
+    width: 100%;
 }
 
 button:after {
@@ -39,15 +39,15 @@ button:active:after {
 }
 
 
-input {
-    width: 250px;
+input, textarea {
     -webkit-tap-highlight-color: transparent;
-    display: block;
-    min-width: 0px;
-    padding: 14.5px 14px;
+    padding: 15px 14px;
     border-radius: 5px;
     border: 1px solid rgb(224, 224, 224);
     font-weight: 300;
     font-size: 15px;
     margin-right: 5px;
+    max-width: 100%;
+    display: flex;
+    margin-top: 10px;
 }

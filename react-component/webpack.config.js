@@ -48,6 +48,7 @@ module.exports = {
       filename: 'remoteEntry.js',
       exposes: {
         './PopularTagsComponent': './src/PopularTagsComponent',
+        './NewArticleComponent': './src/NewArticleComponent',
       },
       shared: {
         react: {

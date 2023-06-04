@@ -32,7 +32,11 @@ export class PopularTagsComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.root.unmountComponentAtNode(this.containerRef.nativeElement);
+    try {
+      this.root.unmountComponentAtNode(this.containerRef.nativeElement);
+    } catch (e) {
+      console.error(e)
+    }
   }
 
 }

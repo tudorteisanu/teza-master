@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="logo">
+    Feed
+  </div>
+  <div class="links">
+    <a
+      class="links__item"
+      routerLinkActive="links__item--active"
+      routerLink="/"
+      [routerLinkActiveOptions]="{exact: true}">
+      Home
+    </a>
+    <ng-container *ngIf="currentUser$ | async; else authButtons;">
+      <a class="links__item" routerLink="/new-article" routerLinkActive="links__item--active">
+        New article
+      </a>
+      <a class="links__item" routerLink="/profile" routerLinkActive="links__item--active">
+        {{(currentUser$ | async).username}}
+      </a>
+    </ng-container>
+    <ng-template #authButtons>
+      <a class="links__item" routerLink="/login" routerLinkActive="links__item--active">
+        Sign in
+      </a>
+      <a class="links__item" routerLink="/register" routerLinkActive="links__item--active">
+        Sign up
+      </a>
+    </ng-template>
+  </div>
+</div>
