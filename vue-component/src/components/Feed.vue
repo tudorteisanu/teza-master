@@ -1,7 +1,7 @@
 <script>
 import {defineCustomElement} from 'vue';
 
-const FEED_API_URL = 'https://api.realworld.io/api/articles?limit=10&offset=0';
+const FEED_API_URL = 'https://api.realworld.io/api/articles';
 
 const Feed = defineCustomElement({
     styles: [`
@@ -97,16 +97,23 @@ const Feed = defineCustomElement({
     data: () => ({
         articles: [],
         articlesCount: 0,
-        loading: false
+        loading: false,
+        limit: 10,
+        page: 1
     }),
     async mounted() {
         await this.fetchFeed()
     },
     methods: {
+        getUrl() {
+            const offset = this.page * this.limit - this.limit
+            return `${FEED_API_URL}?limit=${this.limit}&offset=${offset}`
+        },
         async fetchFeed() {
             try {
                 this.loading = true;
-                const response = await fetch(FEED_API_URL);
+                const url = this.getUrl();
+                const response = await fetch(url);
                 const {articles, articlesCount} = await response.json();
                 [this.articles, this.articlesCount] = [articles, articlesCount];
                 console.log(this.articles)
