@@ -1,0 +1,28 @@
+.popular-tags {
+    padding: 5px 10px 10px;
+    background: #f3f3f3;
+    border-radius: 4px;
+}
+
+.popular-tags__title {
+    color: rgb(55, 58, 60);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.popular-tags__item {
+    color: #fff!important;
+    font-size: .8rem;
+    padding: 8px;
+    white-space: nowrap;
+    margin-right: 3px;
+    margin-bottom: .2rem;
+    display: inline-block;
+    background-color: #818a91;
+    border-radius: 10rem;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+}
