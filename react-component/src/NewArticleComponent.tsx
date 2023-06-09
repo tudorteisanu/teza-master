@@ -1,18 +1,20 @@
 import * as React from 'react';
 import {FunctionComponent, useState} from "react";
-
-import "./profile-style.css";
+import {NewArticleInterfaces} from "./types/new-article.interfaces";
+import "./new-article-style.css";
 
 export interface INewArticleComponent {
     onSubmit: () => void;
     errors: string[]
 }
 
+const initialsFormState: NewArticleInterfaces = {title: "", description: "", body: ""};
+
 export const NewArticleComponent: FunctionComponent<INewArticleComponent> = (
     props: INewArticleComponent
 ) => {
     const [state] = useState(props as any);
-    const [form, setForm] = useState({title: "", description: "", body: ""} as any);
+    const [form, setForm] = useState(initialsFormState);
 
     function handleChange(e) {
         const key = e.target.name;
@@ -23,7 +25,6 @@ export const NewArticleComponent: FunctionComponent<INewArticleComponent> = (
             [key]: value,
         }));
     }
-
 
     const handleSubmit = async () => {
         state.onSubmit(form);

@@ -2,7 +2,7 @@ import * as React from 'react';
 import {FunctionComponent, useEffect, useState} from "react";
 
 import "./popular-tags-style.css";
-const API_URL = 'https://api.realworld.io/api/tags';
+import {API_URL} from "./consts";
 
 export const PopularTagsComponent: FunctionComponent<void> = () => {
     const [tags, setTags] = useState([]);
@@ -11,7 +11,7 @@ export const PopularTagsComponent: FunctionComponent<void> = () => {
     const loadTags = async () => {
         try {
             setLoading(true);
-            const data = await  fetch(API_URL);
+            const data = await  fetch(`${API_URL}/tags`);
             const {tags: payload} = await data.json();
             setTags(payload);
         } catch (e) {

@@ -65,33 +65,32 @@ const Feed = defineCustomElement({
    `],
     template: `
       <div class="article-container">
-      <div v-if="loading">
-        Loading articles...
-      </div>
-      <div v-else class="article" v-for="article in articles" :article="article">
-        <div class="article__avatar">
-          <div>
-            <img :src="article.author.image" alt="">
-          </div>
-          <div class="article__author">
-            <div class="article__author--name ">
-              {{ article.author.username }}
+        <div v-if="loading">
+          Loading articles...
+        </div>
+        <div v-else class="article" v-for="article in articles" :article="article">
+          <div class="article__avatar">
+            <div>
+              <img :src="article.author.image" alt="">
             </div>
-            <div class="article__created">{{ article.createdAt }}</div>
+            <div class="article__author">
+              <div class="article__author--name ">
+                {{ article.author.username }}
+              </div>
+              <div class="article__created">{{ article.createdAt }}</div>
+            </div>
+
           </div>
-
+          <div class="article__title">
+            {{ article.title }}
+          </div>
+          <p class="article__description">
+            {{ article.description }}
+          </p>
+          <ul class="article__tag-list">
+            <li class="article__tag" v-for="tag in article.tagList" :key="tag">{{ tag }}</li>
+          </ul>
         </div>
-        <div class="article__title">
-          {{ article.title }}
-        </div>
-        <p class="article__description">
-          {{ article.description }}
-        </p>
-        <ul class="article__tag-list">
-          <li class="article__tag" v-for="tag in article.tagList" :key="tag">{{ tag }}</li>
-        </ul>
-      </div>
-
       </div>
     `,
     data: () => ({

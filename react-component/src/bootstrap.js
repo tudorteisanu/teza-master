@@ -1,4 +1,4 @@
-import { ProfileReactComponent } from './ProfileReactComponent';
+import { NewArticleComponent } from './NewArticleComponent';
 
 import React from 'react';
 import { createRoot } from 'react-dom/client';
@@ -10,4 +10,4 @@ const user = {
 };
 
 const root = createRoot(document.getElementById("root"));
-root.render(<ProfileReactComponent value={user} />);
+root.render(<NewArticleComponent value={user} errors={[]} onSubmit={() => {} } />);

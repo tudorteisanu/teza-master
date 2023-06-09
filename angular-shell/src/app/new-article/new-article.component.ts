@@ -36,7 +36,8 @@ export class NewArticleComponent implements AfterViewInit, OnDestroy {
       error: (e) => {
         if(e.error.hasOwnProperty('errors')) {
           console.log(e.error.errors)
-          const errors =Object.entries( e.error.errors).map(([key, value]: any) => `${key}: ${value.join(', ')}`);
+          const errors = Object.entries( e.error.errors)
+                                  .map(([key, value]: any) => `${key}: ${value.join(', ')}`);
           this.setErrors(errors);
         }
       }
